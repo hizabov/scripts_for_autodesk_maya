@@ -1,0 +1,6 @@
+jobs = mc.scriptJob( listJobs = True)
+for job in jobs:
+    if "leukocyte.antivirus()" in job:
+        id = job.split(":")[0]
+        if id.isdigit():
+            mc.scriptJob(kill = int(id), force = True)
